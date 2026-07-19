@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'core/theme/app_theme.dart';
+import 'features/inventory/presentation/screens/product_list_screen.dart';
 
-/// Root widget. Routing (go_router) will be wired in once
-/// the first module's screens exist — kept minimal for now.
+/// Root widget. Full go_router setup will replace this direct `home:`
+/// wiring once more than one module exists.
 class WholesaleErpApp extends StatelessWidget {
   const WholesaleErpApp({super.key});
 
@@ -14,14 +15,7 @@ class WholesaleErpApp extends StatelessWidget {
       theme: AppTheme.dark,
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.dark,
-      home: const Scaffold(
-        body: Center(
-          child: Text(
-            'Wholesale ERP & POS\nModules loading...',
-            textAlign: TextAlign.center,
-          ),
-        ),
-      ),
+      home: const ProductListScreen(),
     );
   }
 }
